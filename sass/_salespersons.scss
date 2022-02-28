@@ -1,0 +1,46 @@
+.salespersons {
+  background-color: $color-secondary;
+  grid-column: col-start 7 / full-end;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: 1 / -1;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: min-content max-content;
+    grid-column-gap: 2rem;
+    grid-row-gap: 5vh;
+    align-items: center;
+
+    @media only screen and (max-width: $bp-medium) {
+      grid-template-columns: repeat(3, min-content max-content);
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      grid-template-columns: min-content max-content;
+    }
+  }
+  &__img {
+    display: block;
+    width: 7rem;
+    border-radius: 30%;
+    box-shadow: 0 2rem 5rem rgba(#000, 0.5);
+  }
+
+  &__sold {
+    color: $color-grey-light-1;
+    text-transform: uppercase;
+    margin-top: -3px;
+  }
+
+  &__details {
+    text-shadow: black 0 2rem 5rem;
+  }
+}

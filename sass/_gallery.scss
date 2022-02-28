@@ -1,0 +1,68 @@
+@mixin gridRowCol($rs, $rw, $cs, $cw) {
+  grid-row: $rs / span $rw;
+  grid-column: $cs / span $cw;
+}
+
+.gallery {
+  background-color: $color-grey-light-1;
+  grid-column: full-start / full-end;
+
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(7, 5vw);
+
+  grid-gap: 1.5rem;
+  padding: 1.5rem;
+
+  &__item {
+    &--1 {
+      @include gridRowCol(1, 2, 1, 2);
+    }
+    &--2 {
+      @include gridRowCol(1, 3, 3, 3);
+    }
+    &--3 {
+      @include gridRowCol(1, 2, 6, 1);
+    }
+    &--4 {
+      @include gridRowCol(1, 2, 7, 2);
+    }
+    &--5 {
+      @include gridRowCol(3, 3, 1, 2);
+    }
+    &--6 {
+      @include gridRowCol(4, 2, 3, 2);
+    }
+    &--7 {
+      @include gridRowCol(4, 1, 5, 1);
+    }
+    &--8 {
+      @include gridRowCol(3, 2, 6, 2);
+    }
+    &--9 {
+      @include gridRowCol(3, 3, 8, 1);
+    }
+    &--10 {
+      @include gridRowCol(6, 2, 1, 1);
+    }
+    &--11 {
+      @include gridRowCol(6, 2, 2, 2);
+    }
+    &--12 {
+      @include gridRowCol(6, 2, 4, 1);
+    }
+    &--13 {
+      @include gridRowCol(5, 3, 5, 3);
+    }
+    &--14 {
+      @include gridRowCol(6, 2, 8, 1);
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
